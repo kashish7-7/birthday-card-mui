@@ -65,7 +65,7 @@
 </head>
 <body>
   <div class="stage">
-    <img src="shivling.png" alt="Shivling" class="center-image" id="mainImage">
+    <img src="./shivling.png" alt="Shivling" class="center-image" id="mainImage">
     <div class="hint">tap the image</div>
   </div>
 
@@ -74,7 +74,7 @@
     img.addEventListener('click', () => {
       img.classList.add('tapped');
       setTimeout(() => {
-        window.location.href = "page2.html";
+        window.location.href = "./page2.html";
       }, 250);
     });
   </script>
