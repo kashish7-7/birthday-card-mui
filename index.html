@@ -1,7 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mummy</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #FFE5B4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .stage {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .center-image {
+    max-width: 55vw;
+    max-height: 60vh;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    filter: drop-shadow(0 10px 25px rgba(60, 40, 10, 0.25));
+    transition: transform 0.35s ease;
+    animation: float 4s ease-in-out infinite;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .center-image:hover {
+    transform: scale(1.04);
+  }
+
+  .center-image.tapped {
+    animation: none;
+    transform: scale(1.12);
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .hint {
+    position: absolute;
+    bottom: 6vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    color: #8a5a2b;
+    letter-spacing: 0.05em;
+    opacity: 0.75;
+  }
+</style>
+</head>
 <body>
+  <div class="stage">
+    <img src="shivling.png" alt="Shivling" class="center-image" id="mainImage">
+    <div class="hint">tap the image</div>
+  </div>
 
-  <h1>TEST</h1>
-
-  <img src="./shivling.png" width="500">
-
+  <script>
+    const img = document.getElementById('mainImage');
+    img.addEventListener('click', () => {
+      img.classList.add('tapped');
+      setTimeout(() => {
+        window.location.href = "page2.html";
+      }, 250);
+    });
+  </script>
 </body>
+</html>
