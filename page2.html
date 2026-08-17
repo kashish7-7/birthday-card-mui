@@ -96,12 +96,12 @@
 <body>
   <div class="stage">
     <div class="glow"></div>
-    <img src="shiva.png" alt="Lord Shiva" class="center-image" id="mainImage">
+    <img src="./shiva.png" alt="Lord Shiva" class="center-image" id="mainImage">
     <div class="hint">tap the image</div>
     <div class="sound-prompt" id="soundPrompt">🔊 tap for sound</div>
   </div>
 
-  <audio id="bgAudio" src="audio.mp3" preload="auto"></audio>
+  <audio id="bgAudio" src="./audio.mp3" preload="auto"></audio>
 
   <script>
     const audio = document.getElementById('bgAudio');
@@ -127,7 +127,7 @@
     img.addEventListener('click', () => {
       img.classList.add('tapped');
       setTimeout(() => {
-        window.location.href = "page3.html";
+        window.location.href = "./page3.html";
       }, 250);
     });
   </script>
